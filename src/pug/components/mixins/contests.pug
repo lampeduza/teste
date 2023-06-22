@@ -1,0 +1,26 @@
+mixin contests
+	-
+		const data = [
+			{
+				text: 'Бег'
+			},
+			{
+				text: 'Для детей'
+			},
+			{
+				text: 'Семейные'
+			},
+			{
+				text: 'Школьные',
+				isCurrent: true,
+			},
+			{
+				text: 'Региональные'
+			},
+		]
+
+	section.contests
+		ul.contests__list
+			each item in data
+				li.contests__item(class= item.isCurrent ? 'contests__item--current' : '')
+					+button(item)

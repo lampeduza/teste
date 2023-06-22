@@ -1,0 +1,13 @@
+extends ../components/layout/layout
+
+block variables
+  - const pageTitle = 'Конкурсы';
+block content
+  main
+    +promo(class="promo--main")
+    section.gallery
+      .gallery__wrapper.container
+        +gallery-form
+        +contests
+        +gallery-header
+        +gallery-list(class="gallery__list--main")

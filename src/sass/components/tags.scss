@@ -1,0 +1,38 @@
+@use './global/library.scss' as lib;
+
+.tags__list {
+	@include lib.reset-list;
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+
+.tags__item {
+	margin-left: 8px;
+	margin-top: 8px;
+}
+
+.tags__link {
+	color: lib.$color-black-pearl;
+	padding: 8px 15px;
+	border-radius: 20px;
+
+	background-color: lib.$color-alice-blue;
+
+	@include lib.hover {
+		color: lib.$color-cobalt;
+		background-color: lib.$color-solitude;
+	}
+
+	@include lib.focus {
+		color: lib.$color-cobalt;
+		background-color: lib.$color-solitude;
+	}
+
+	@include lib.active {
+		color: lib.$color-cobalt;
+		background-color: lib.$color-solitude;
+	}
+}

@@ -1,0 +1,23 @@
+@use './global/library.scss';
+@use './global/scaffolding.scss';
+@use './global/visually-hidden.scss';
+@use './global/map.scss';
+
+@use './components/container.scss';
+@use './components/button.scss';
+@use './components/link.scss';
+@use './components/pagination.scss';
+@use './components/breadcrumbs.scss';
+@use './components/custom-select.scss';
+@use './components/custom-input.scss';
+@use './components/tags.scss';
+
+@use './components/promo.scss';
+@use './components/gallery.scss';
+@use './components/contests.scss';
+@use './components/gallery-header.scss';
+@use './components/socials.scss';
+@use './components/best-projects.scss';
+@use './components/slider.scss';
+@use './components/projects.scss';
+@use './components/request.scss';

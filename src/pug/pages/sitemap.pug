@@ -1,0 +1,45 @@
+extends ../components/layout/layout
+
+block variables
+  - const pageTitle = 'Карта сайта';
+  -
+    const links = [
+      {
+        href: 'ui-kit.html',
+        title: 'ui-kit',
+        text: 'Ui-kit',
+      },
+      {
+        href: 'index.html',
+        title: 'Главная страница',
+        text: 'Главная страница',
+      },
+      {
+        href: 'secondary.html',
+        title: 'Конкурс Муниципалитетов',
+        text: 'Конкурс Муниципалитетов',
+      },
+      {
+        href: 'best-project.html',
+        title: 'Лучшие проекты',
+        text: 'Лучшие проекты',
+      },
+      {
+        href: 'marathon.html',
+        title: 'Марафон 20 км',
+        text: 'Марафон 20 км',
+      },
+      {
+        href: 'request.html',
+        title: 'Заявка на участие',
+        text: 'Заявка на участие',
+      },
+    ];
+
+  section.map
+    .map__wrapper
+      ul.map__list
+        - let counter = 1;
+        each link in links
+          li.map__item
+            a.map__link(href= link.href title= link.title)= `${counter++}. ${link.text}`

@@ -1,0 +1,38 @@
+@use './global/library.scss' as lib;
+
+.container {
+	max-width: 1149px;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	@include lib.viewport-1023 {
+		padding: 0 20px;
+	}
+
+	@include lib.viewport-767 {
+		padding: 0 15px;
+
+		.breadcrumbs {
+			display: none;
+		}
+	}
+
+	.breadcrumbs {
+		grid-column: 1 / -1;
+		margin-top: 20px;
+		margin-bottom: 36px;
+
+		.breadcrumbs__item {
+			font-size: 13px;
+			color: #373C41;
+		}
+
+		.link {
+			font-family: 'Montserrat';
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 16px;
+			color: #373C41;
+		}
+	}
+}

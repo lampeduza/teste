@@ -1,0 +1,15 @@
+mixin projects
+	section.projects
+		h1 Лучшие проекты
+		+custom-select(
+		  {
+		    heading: 'Все',
+		    label: 'Регионы',
+		    data: [
+		      {value: 'hide', text: 'Все'},
+		      {value: 'Siberian', text: 'Сибирский регион'},
+		      {value: 'Central', text: 'Центральный федеральный округ'},
+		    ],
+		  }
+		)
+		+gallery-list(class="gallery__list--projects")

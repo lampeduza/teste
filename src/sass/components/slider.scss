@@ -1,0 +1,139 @@
+@use './global/library.scss' as lib;
+
+.slider {
+	position: relative;
+}
+
+.slider__list {
+	@include lib.reset-list;
+
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+
+	@include lib.viewport-767 {
+		overflow: scroll;
+	}
+}
+
+.slider__item {
+	width: 31.594%;
+	flex-shrink: 0;
+	margin-right: 2.6%;
+
+	@include lib.viewport-767 {
+		width: 97%;
+		margin-right: 5px;
+		position: relative;
+
+		&::before {
+			content: '';
+			width: 100%;
+			background-color: rgba(55, 60, 65, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
+
+.slider__link {
+	display: block;
+
+	picture {
+		margin-bottom: 15px;
+
+		@include lib.viewport-767 {
+			margin: 0;
+		}
+	}
+
+	p {
+		font-family: inherit;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 700;
+		color: #373C41;
+
+		@include lib.viewport-767 {
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 700;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.slider__content {
+	padding: 14px;
+
+	time {
+		display: none;
+	}
+
+	@include lib.viewport-767 {
+		position: absolute;
+		bottom: 10px;
+		z-index: 5;
+
+		time {
+			font-family: inherit;
+			display: block;
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 16px;
+			color: #BDBDBD;
+		}
+	}
+}
+
+.slider__controls {
+	@include lib.viewport-767 {
+		display: none;
+	}
+
+	.button {
+		border: none;
+		color: #373C41;
+		padding: 5px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-100%);
+		z-index: 10;
+
+		@include lib.hover {
+			color: lighten(#373C41, 40%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.focus {
+			color: lighten(#373C41, 40%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.active {
+			color: lighten(#373C41, 40%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		&--previous {
+			left: -41px;
+		}
+
+		&--next {
+			right: -41px;
+		}
+	}
+}

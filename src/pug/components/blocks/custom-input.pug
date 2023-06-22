@@ -1,0 +1,7 @@
+mixin custom-input(options = {})
+	- const {fields} = options;
+
+	.custom-input&attributes(attributes)
+		each field in fields
+			label.custom-input__label(for= field.sign class= field.hidden ? 'visually-hidden' : false)= field.label
+			input.custom-input__field(type= field.type name= field.name id= field.id placeholder= field.placeholder)

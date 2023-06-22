@@ -1,0 +1,21 @@
+mixin breadcrumbs(options = {})
+  - const icon = options.icon || false;
+  - const {name, width, height} = icon || {};
+  - const links = options.links;
+
+  .breadcrumbs&attributes(attributes)
+    ul.breadcrumbs__list
+      each link, index in links
+        li.breadcrumbs__item
+          if index !== links.length - 1
+            +link(
+              {
+                text: link.text,
+                href: link.href,
+              }
+            ).breadcrumbs__link
+            //- +icon(name, width, height)
+            .
+              /
+          else
+            span.link.breadcrumbs__link.breadcrumbs__link--current= link.text

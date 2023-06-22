@@ -1,0 +1,24 @@
+extends ../components/layout/layout
+
+block variables
+  - const pageTitle = 'Заявка на участие';
+block content
+  main
+    .container
+      +breadcrumbs({
+        links: [
+          {
+            href: 'index.html',
+            text: 'Конкурсы',
+          },
+          {
+            href: 'secondary.html',
+            text: 'Конкурсы муниципалитетов',
+          },
+          {
+            text: 'Лучшие проекты',
+          },
+        ],
+      })
+      +request
+      

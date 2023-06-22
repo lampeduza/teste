@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>UI-KIT: готовые компоненты</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" href="fonts/mon/400.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/500.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/600.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/700.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/old-standard-tt/400.woff2" as="font" crossorigin>
+    <style>
+      ::selection {
+        background-color: pink;
+      }
+      
+      .ui-kit {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 10px;
+      
+        position: relative;
+      }
+      
+      .content {
+        position: sticky;
+        top: 0;
+      }
+      
+      nav {
+        position: sticky;
+        top: 0;
+        overflow-y: scroll;
+        height: 100vh;
+      }
+      
+      nav ul {
+        list-style-type: none;
+      }
+      
+      nav li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      
+      nav a {
+        color: rgba(0, 0, 0, 0.6);
+        display: block;
+        padding: 20px;
+      }
+      
+      section {
+        min-height: 100vh;
+        margin-bottom: 60px;
+      }
+      
+      section > h2 {
+        margin-bottom: 30px;
+        padding: 40px 20px;
+        color: #ffffff;
+        background-color: blue;
+      }
+      
+      h3 {
+        margin-bottom: 20px;
+      }
+      
+      p {
+        margin: 20px 0;
+      }
+      
+      pre {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      
+      pre > .key {
+        color: crimson;
+      }
+      
+      pre > .value {
+        color: blue;
+      }
+      
+      pre > .curvy-bracket {
+        color: rgba(0, 0, 0, 0.3);
+      }
+      
+      .list {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 60px 20px;
+        padding-right: 20px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrapper ui-kit">
+      <nav>
+        <ul>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#links">Links</a></li>
+          <li><a href="#pagination">Pagination</a></li>
+          <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+          <li><a href="#select">Custom select</a></li>
+          <li><a href="#input">Custom input</a></li>
+          <li><a href="#tags">Tags</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <section id="buttons">
+          <h2>Buttons</h2>
+          <ol class="list">
+            <li>
+              <h3>Button</h3>
+              <button class="button" type="button">btn
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+  <span class="curvy-bracket">}</span>
+)</code></pre>
+            </li>
+            <li>
+              <h3>Link like button</h3>
+              <a class="button" href="#address.html" title="Перейти на какой - то источник">btn
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+    <span class="key">href</span>: <span class="value">'#address.html'</span>,
+    <span class="key">title</span>: <span>'Перейти на какой - то источник'</span>,
+  <span class="curvy-bracket">}</span>
+)</code></pre>
+            </li>
+            <li>
+              <h3>Link like button (disabled)</h3>
+              <a class="button button--disabled" href="#address.html" title="Перейти на какой - то источник" tabindex="-1">btn
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+    <span class="key">href</span>: <span class="value">'#address.html'</span>,
+    <span class="key">title</span>: <span>'Перейти на какой - то источник'</span>,
+    <span class="key">mods</span>: [<span class="value">'disabled'</span>],
+  <span class="curvy-bracket">}</span>
+)(tabindex='-1')</code></pre>
+            </li>
+            <li>
+              <h3>--mod</h3>
+              <button class="button button--modifier" type="button">--mod btn
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+    <span class="key">mods</span>: [<span class="value">'modifier'</span>],
+  <span class="curvy-bracket">}</span>
+)</code></pre>
+            </li>
+            <li>
+              <h3>Left icon</h3>
+              <button class="button" type="button">
+                <svg class="button__icon button__icon--left" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg>Left icon btn
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+    <span class="key">icon</span>: <span class="curvy-bracket">{</span>
+      <span class="key">name</span>: <span class="value">'ok'</span>,
+      <span class="key">width</span>: <span class="value">'24'</span>,
+      <span class="key">height</span>: <span class="value">'24'</span>,
+      <span class="key">isLeft</span>: <span class="value">true</span>,
+    <span class="curvy-bracket">}</span>
+  <span class="curvy-bracket">}</span>
+)</code></pre>
+            </li>
+            <li>
+              <h3>Right icon</h3>
+              <button class="button" type="button">Right icon btn
+                <svg class="button__icon button__icon--right" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg>
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+    <span class="key">icon</span>: <span class="curvy-bracket">{</span>
+      <span class="key">name</span>: <span class="value">'ok'</span>,
+      <span class="key">width</span>: <span class="value">'24'</span>,
+      <span class="key">height</span>: <span class="value">'24'</span>,
+      <span class="key">isRight</span>: <span class="value">true</span>,
+    <span class="curvy-bracket">}</span>
+  <span class="curvy-bracket">}</span>
+)</code></pre>
+            </li>
+            <li>
+              <h3>Button</h3>
+              <button class="button" type="button" aria-label="Какой - то aria-label">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg>
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  {
+    ariaLabel: 'Какой - то aria-label',
+    icon: {
+      name: 'ok',
+      width: '24',
+      height: '24',
+    },
+  }
+)
+</code></pre>
+            </li>
+            <li>
+              <h3>Button disabled</h3>
+              <button class="button button--disabled" type="button" disabled>btn
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+button(
+  <span class="curvy-bracket">{</span>
+    <span class="key">text</span>: <span class="value">'hello'</span>,
+  <span class="curvy-bracket">}</span>
+)(disabled)</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section id="links">
+          <h2>Links</h2>
+          <ol class="list">
+            <li>
+              <h3>link</h3>
+              <a class="link" href="#address.html"><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#address.html',
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>link disabled</h3>
+              <a class="link link--disabled" href="#address.html" tabindex="-1"><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#address.html',
+    mods: ['disabled'],
+  }
+)(tabindex="-1")</code></pre>
+            </li>
+            <li>
+              <h3>button like link (disabled)</h3>
+              <button class="link link--disabled" type="button" disabled><span class="link__text">link</span>
+              </button>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    mods: ['disabled'],
+  }
+)(disabled)</code></pre>
+            </li>
+            <li>
+              <h3>--underlined</h3>
+              <a class="link link--underlined" href="#address.html"><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#address.html',
+    mods: ['underlined'],
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>--derorate-underlined</h3>
+              <a class="link link--decorate link--decorate-underlined" href="#address.html"><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#address.html',
+    mods: [
+      'decorate',
+      'decorate-underlined',
+    ],
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>--decorate-dotted</h3>
+              <a class="link link--decorate link--decorate-dotted" href="#address.html"><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#address.html',
+    mods: [
+      'decorate',
+      'decorate-dotted'
+    ],
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>Left icon</h3>
+              <a class="link" href="#left-icon.html">
+                <svg class="link__icon link__icon--left" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg><span class="link__text">link</span>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#left-icon.html',
+    icon: {
+      name: 'ok',
+      width: '24',
+      height: '24',
+      isLeft: true,
+    },
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>Right icon</h3>
+              <a class="link" href="#right-icon.html"><span class="link__text">link</span>
+                <svg class="link__icon link__icon--right" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    text: 'link',
+    href: '#right-icon.html',
+    icon: {
+      name: 'ok',
+      width: '24',
+      height: '24',
+      isRight: true,
+    },
+  }
+)</code></pre>
+            </li>
+            <li>
+              <h3>Only icon</h3>
+              <a class="link" href="#only-icon.html"><span class="link__text"></span>
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#ok"></use>
+                </svg>
+              </a>
+              <p>Развертывание</p>
+              <pre><code>+link(
+  {
+    href: '#only-icon.html',
+    icon: {
+      name: 'ok',
+      width: '24',
+      height: '24',
+    },
+  }
+)</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section id="pagination">
+          <h2>Pagination</h2>
+          <ol class="list">
+            <li>
+              <div class="pagination">
+                <a class="link pagination__button pagination__button--previous" href="#previous.html">
+                  <svg class="link__icon link__icon--left" width="5" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#arrow-left"></use>
+                  </svg><span class="link__text">Previous</span>
+                </a>
+                <a class="link pagination__button pagination__button--next" href="#next.html"><span class="link__text">Next</span>
+                  <svg class="link__icon link__icon--right" width="5" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                  </svg>
+                </a>
+                <ul class="pagination__list">
+                  <li class="pagination__item">
+                    <a class="link pagination__link" href="#1.html" tabindex=""><span class="link__text">1</span>
+                    </a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="link pagination__link" href="#2.html" tabindex=""><span class="link__text">2</span>
+                    </a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="link pagination__link" href="#3.html" tabindex=""><span class="link__text">3</span>
+                    </a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="link pagination__link" href="#4.html" tabindex=""><span class="link__text">4</span>
+                    </a>
+                  </li>
+                  <li class="pagination__item pagination__item--empty">
+                    <a class="link pagination__link" href="#empty.html" tabindex="-1"><span class="link__text">...</span>
+                    </a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="link pagination__link" href="#101.html" tabindex=""><span class="link__text">101</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <p>Развертывание</p>
+              <pre><code>+pagination({
+  buttons: [
+    {
+      text: 'Previous',
+      href: '#previous.html',
+      isPrevious: true,
+      icon: {
+        name: 'arrow-left',
+        width: '5',
+        height: '9',
+        isLeft: true,
+      },
+    },
+    {
+      text: 'Next',
+      href: '#next.html',
+      icon: {
+        name: 'arrow-right',
+        width: '5',
+        height: '9',
+        isRight: true,
+      },
+    },
+  ],
+  links: [
+    {
+      text: '1',
+      href: '#1.html',
+    },
+    {
+      text: '2',
+      href: '#2.html',
+    },
+    {
+      text: '3',
+      href: '#3.html',
+    },
+    {
+      text: '4',
+      href: '#4.html',
+    },
+    {
+      text: '...',
+      href: '#empty.html',
+      isEmpty: true,
+    },
+    {
+      text: '101',
+      href: '#101.html',
+    },
+  ],
+})</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section id="breadcrumbs">
+          <h2>Breadcrumbs</h2>
+          <ol class="list">
+            <li>
+              <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item">
+                    <a class="link breadcrumbs__link" href="#index.html"><span class="link__text">Главная</span>
+                    </a>/
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a class="link breadcrumbs__link" href="#article.html"><span class="link__text">Статья</span>
+                    </a>/
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a class="link breadcrumbs__link" href="#catalog.html"><span class="link__text">Каталог</span>
+                    </a>/
+                  </li>
+                  <li class="breadcrumbs__item"><span class="link breadcrumbs__link breadcrumbs__link--current">Карточка товара</span>
+                  </li>
+                </ul>
+              </div>
+              <p>Развертывание</p>
+              <pre><code>+breadcrumbs({
+  links: [
+    {
+      href: '#index.html',
+      text: 'Главная',
+    },
+    {
+      href: '#article.html',
+      text: 'Статья',
+    },
+    {
+      href: '#catalog.html',
+      text: 'Каталог',
+    },
+    {
+      text: 'Карточка товара',
+    },
+  ],
+  icon: {
+    name: 'arrow-right',
+    width: '5',
+    height: '9',
+  },
+})</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section id="select">
+          <h2>Custom select</h2>
+          <ol class="list">
+            <li>
+              <div class="custom-select">
+                <label></label>
+                <select id="month">
+                  <option value="hide">-- Months --</option>
+                  <option value="january">January</option>
+                  <option value="february">February</option>
+                  <option value="march">March</option>
+                  <option value="april">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="july">July</option>
+                  <option value="august">August</option>
+                  <option value="september">September</option>
+                  <option value="october">October</option>
+                  <option value="november">November</option>
+                  <option value="december">December</option>
+                </select>
+                <div class="custom-select__styled"><span class="custom-select__value">-- Months --</span>
+                  <svg width="18" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#down"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" rel="hide" tabindex="0">-- Months --</li>
+                  <li class="custom-select__option" rel="january" tabindex="0">January</li>
+                  <li class="custom-select__option" rel="february" tabindex="0">February</li>
+                  <li class="custom-select__option" rel="march" tabindex="0">March</li>
+                  <li class="custom-select__option" rel="april" tabindex="0">April</li>
+                  <li class="custom-select__option" rel="may" tabindex="0">May</li>
+                  <li class="custom-select__option" rel="june" tabindex="0">June</li>
+                  <li class="custom-select__option" rel="july" tabindex="0">July</li>
+                  <li class="custom-select__option" rel="august" tabindex="0">August</li>
+                  <li class="custom-select__option" rel="september" tabindex="0">September</li>
+                  <li class="custom-select__option" rel="october" tabindex="0">October</li>
+                  <li class="custom-select__option" rel="november" tabindex="0">November</li>
+                  <li class="custom-select__option" rel="december" tabindex="0">December</li>
+                </ul>
+              </div>
+              <p>Развертывание</p>
+              <pre><code>+custom-select(
+  {
+    heading: '-- Months --',
+    data: [
+      {value: 'hide', text: '-- Months --'},
+      {value: 'january', text: "January"},
+      {value: 'february', text: "February"},
+      {value: 'march', text: "March"},
+      {value: 'april', text: "April"},
+      {value: 'may', text: "May"},
+      {value: 'june', text: "June"},
+      {value: 'july', text: "July"},
+      {value: 'august', text: "August"},
+      {value: 'september', text: "September"},
+      {value: 'october', text: "October"},
+      {value: 'november', text: "November"},
+      {value: 'december', text: "December"},
+    ],
+  }
+)</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section id="input">
+          <h2>Custom input</h2>
+          <ol class="list">
+            <li>
+              <div class="custom-input">
+                <label class="custom-input__label" for="id">Label</label>
+                <input class="custom-input__field" type="type" name="name" id="id" placeholder="Placeholder">
+              </div>
+            </li>
+          </ol>
+        </section>
+        <section id="tags">
+          <h2>Tags</h2>
+          <ol class="list">
+            <li>
+              <div class="tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-11"><span class="link__text">Iphone 11</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-11-pro"><span class="link__text">Iphone 11 Pro</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-11-pro-max"><span class="link__text">Iphone 11 Pro Max</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-12"><span class="link__text">Iphone 12</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-12-pro"><span class="link__text">Iphone 12 Pro</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-12-pro-max"><span class="link__text">Iphone 12 Pro Max</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-13"><span class="link__text">Iphone 13</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-13-pro"><span class="link__text">Iphone 13 Pro</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-13-pro-max"><span class="link__text">Iphone 13 Pro Max</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-14"><span class="link__text">Iphone 14</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-14-pro"><span class="link__text">Iphone 14 Pro</span>
+                    </a>
+                  </li>
+                  <li class="tags__item">
+                    <a class="link tags__link" href="#iphone-14-pro-max"><span class="link__text">Iphone 14 Pro Max</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <p>Развертывание</p>
+              <pre><code>+tags({
+  tags: [
+    { text: 'Iphone 11', href: '#address' },
+    { text: 'Iphone 11 Pro', href: '#address' },
+    { text: 'Iphone 11 Pro Max', href: '#address' },
+  ],
+})</code></pre>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

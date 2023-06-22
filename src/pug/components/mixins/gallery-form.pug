@@ -1,0 +1,8 @@
+mixin gallery-form
+  form.gallery__form(action="" method="get")
+    +custom-search({
+      type: 'text',
+      name: 'search-field',
+      id: 'search-field',
+      placeholder: 'Найти конкурс',
+    })

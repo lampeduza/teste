@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+.vscode
+.nvmrc
+package-lock.json
+yarn.lock
+*.ai
+*.log
+*.psd
+*.sublime*
+node_modules/
+npm-debug.*
+src/pug/pages/ui-kit.pug
+source/css/*.css
+source/css/*.map
+Thumbs.db

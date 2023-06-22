@@ -1,0 +1,23 @@
+extends ../components/layout/layout
+
+block variables
+  - const pageTitle = 'Лучшие проекты';
+block content
+  main
+    .container
+      +breadcrumbs({
+        links: [
+          {
+            href: 'index.html',
+            text: 'Конкурсы',
+          },
+          {
+            href: 'secondary.html',
+            text: 'Конкурсы муниципалитетов',
+          },
+          {
+            text: 'Лучшие проекты',
+          },
+        ],
+      })
+      +projects

@@ -1,0 +1,75 @@
+@use './global/library.scss' as lib;
+
+.custom-input {
+	display: flex;
+	flex-direction: column;
+
+	&.is-invalid {
+		.custom-input__field {
+			border-color: lib.$color-sunset-orange;
+		}
+	}
+
+	&.disabled {
+		opacity: 0.5;
+		
+		.custom-input__label {
+			pointer-events: none;
+		}
+
+		.custom-input__field {
+			pointer-events: none;
+		}
+	}
+}
+
+.custom-input__label {
+	color: lib.$color-bali-hai;
+	margin-bottom: 8px;
+}
+
+.custom-input__field {
+	font-family: inherit;
+	// color: lib.$color-bali-hai;
+	color: #BDBDBD;
+	font-size: 13px;
+	line-height: 15px;
+	padding: 20px 15px;
+	// border: 1px solid lib.$color-pattens-blue;
+	outline: none;
+
+	border: 2px solid #E7E7E7;
+	border-radius: 3px;
+
+	&::placeholder {
+		color: lib.$color-bali-hai;
+		color: #BDBDBD;
+	}
+
+	@include lib.hover {
+		color: lib.$color-nero;
+		border: 2px solid lib.$color-dodger-blue;
+
+		&::placeholder {
+			color: lib.$color-nero;
+		}
+	}
+
+	@include lib.focus {
+		color: lib.$color-nero;
+		border: 2px solid lib.$color-dodger-blue;
+
+		&::placeholder {
+			color: lib.$color-nero;
+		}
+	}
+
+	@include lib.active {
+		color: lib.$color-nero;
+		border: 2px solid lib.$color-dodger-blue;
+
+		&::placeholder {
+			color: lib.$color-nero;
+		}
+	}
+}

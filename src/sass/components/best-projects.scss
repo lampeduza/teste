@@ -1,0 +1,27 @@
+@use './global/library.scss' as lib;
+
+.best-projects {
+	h2 {
+		color: #000000;
+		font-family: inherit;
+		font-size: 28px;
+		line-height: 34px;
+		font-weight: 700;
+		margin-bottom: 23px;
+	}
+
+	@include lib.viewport-1023 {
+		h2 {
+			font-size: 26px;
+			line-height: 32px;
+		}
+	}
+}
+
+.best-projects__wrapper {
+	padding: 60px 60px 100px 60px;
+
+	@include lib.viewport-767 {
+		padding: 30px 15px;
+	}
+}

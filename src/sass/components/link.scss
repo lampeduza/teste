@@ -1,0 +1,79 @@
+@use './global/library.scss' as lib;
+
+.link {
+	color: inherit;
+	font-family: lib.$secondary-font;
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+	outline: none;
+	border: none;
+	background-color: lib.$color-transparent;
+
+	&--disabled,
+	&:disabled {
+		cursor: default;
+    pointer-events: none;
+    opacity: 0.3;
+	}
+
+	&--underlined {
+		text-decoration: underline;
+	}
+
+	&--decorate {
+		@include lib.hover {
+			border-color: crimson;
+		}
+
+		@include lib.focus {
+			border-color: crimson;
+		}
+
+		@include lib.active {
+			border-color: crimson;
+		}
+	}
+
+	&--decorate-underlined {
+		border-bottom: 1px solid black;
+	}
+
+	&--decorate-dotted {
+		border-bottom: 1px dotted black;
+	}
+
+	@include lib.hover {
+		color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+
+	@include lib.focus {
+		color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+
+	@include lib.active {
+		color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+}
+
+.link__icon {
+	&--left {
+		margin-right: 8px;
+	}
+
+	&--right {
+		margin-left: 8px;
+	}
+}

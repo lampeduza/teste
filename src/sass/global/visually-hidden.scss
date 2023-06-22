@@ -1,0 +1,5 @@
+@use '../global/library.scss';
+
+.visually-hidden {
+  @include library.visually-hidden;
+}

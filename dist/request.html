@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Заявка на участие</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" href="fonts/mon/400.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/500.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/600.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/mon/700.woff" as="font" crossorigin>
+    <link rel="preload" href="fonts/old-standard-tt/400.woff2" as="font" crossorigin>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="link breadcrumbs__link" href="index.html"><span class="link__text">Конкурсы</span>
+              </a>/
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="link breadcrumbs__link" href="secondary.html"><span class="link__text">Конкурсы муниципалитетов</span>
+              </a>/
+            </li>
+            <li class="breadcrumbs__item"><span class="link breadcrumbs__link breadcrumbs__link--current">Лучшие проекты</span>
+            </li>
+          </ul>
+        </div>
+        <section class="request">
+          <h1>Заявка на участие</h1>
+          <form action="#" method="#">
+            <fieldset>
+              <legend class="visually-hidden">Заполните заявку на участие</legend>
+              <div class="custom-select">
+                <label>Регионы</label>
+                <select id="month">
+                  <option value="hide">Все</option>
+                  <option value="Siberian">Сибирский регион</option>
+                  <option value="Central">Центральный федеральный округ</option>
+                </select>
+                <div class="custom-select__styled"><span class="custom-select__value">Все</span>
+                  <svg width="18" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#down"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" rel="hide" tabindex="0">Все</li>
+                  <li class="custom-select__option" rel="Siberian" tabindex="0">Сибирский регион</li>
+                  <li class="custom-select__option" rel="Central" tabindex="0">Центральный федеральный округ</li>
+                </ul>
+              </div>
+              <div class="custom-select">
+                <label>Муниципальный район</label>
+                <select id="month">
+                  <option value="hide">Все</option>
+                  <option value="1">Район</option>
+                  <option value="2">Район 2</option>
+                </select>
+                <div class="custom-select__styled"><span class="custom-select__value">Все</span>
+                  <svg width="18" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#down"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" rel="hide" tabindex="0">Все</li>
+                  <li class="custom-select__option" rel="1" tabindex="0">Район</li>
+                  <li class="custom-select__option" rel="2" tabindex="0">Район 2</li>
+                </ul>
+              </div>
+              <div class="custom-input">
+                <label class="custom-input__label" for="population-field">Численность жителей в муниципальном образовании</label>
+                <input class="custom-input__field" type="number" name="population-field" id="population-field" placeholder="150.000">
+              </div>
+              <div class="custom-input">
+                <label class="custom-input__label" for="settlements-field">Количество населенных пунктов в муниципальном образовании</label>
+                <input class="custom-input__field" type="number" name="settlements-field" id="settlements-field" placeholder="3">
+              </div>
+              <div class="custom-input">
+                <label class="custom-input__label" for="percent-field">Доля занимающихся физической культурой и спортом в муниципалитете </label>
+                <input class="custom-input__field" type="text" name="percent-field" id="percent-field" placeholder="45%">
+              </div>
+              <div class="request__field-container">
+                <h2>Официальные информационные ресурсы муниципального образования, на&nbsp;которых размещаются материалы о&nbsp;физической культуре и&nbsp;спорте</h2>
+                <div class="request__field">
+                  <div class="custom-input">
+                    <label class="custom-input__label visually-hidden" for="resource-field-1">Информационный ресурс</label>
+                    <input class="custom-input__field" type="text" name="resource-field-1" id="resource-field-1" placeholder="normasport.ru">
+                  </div>
+                  <button class="button" type="button" aria-label="Очистить поле">
+                    <svg width="24" height="24" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#clear"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="request__field">
+                  <div class="custom-input">
+                    <label class="custom-input__label visually-hidden" for="resource-field-2">Информационный ресурс</label>
+                    <input class="custom-input__field" type="text" name="resource-field-2" id="resource-field-2" placeholder="tyvigre.ru">
+                  </div>
+                  <button class="button" type="button" aria-label="Очистить поле">
+                    <svg width="24" height="24" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#clear"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="button" type="button">Добавить еще
+                  <svg class="button__icon button__icon--right" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#add"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="request__field-container request__field-container--category">
+                <h2>Выбор категории по количеству жителей</h2>
+                <ul>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="first" id="first">
+                    <label for="first">50 тыс.</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="second" id="second" checked>
+                    <label for="second">от 50 до 100 тыс</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" id="third" name="third">
+                    <label for="third">свыше 100 тыс</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="custom-select">
+                <label>Выбор номинации</label>
+                <select id="month">
+                  <option value="hide">Организация работы с трудовым населением по вовлечению в ФКиС</option>
+                  <option value="1">text</option>
+                  <option value="2">text 2</option>
+                </select>
+                <div class="custom-select__styled"><span class="custom-select__value">Организация работы с трудовым населением по вовлечению в ФКиС</span>
+                  <svg width="18" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#down"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" rel="hide" tabindex="0">Организация работы с трудовым населением по вовлечению в ФКиС</li>
+                  <li class="custom-select__option" rel="1" tabindex="0">text</li>
+                  <li class="custom-select__option" rel="2" tabindex="0">text 2</li>
+                </ul>
+              </div>
+            </fieldset>
+            <div class="request__about">
+              <h2>О проекте</h2>
+              <div class="custom-select">
+                <label>Название проекта</label>
+                <select id="month">
+                  <option value="hide">Все</option>
+                  <option value="Siberian">Название 1</option>
+                  <option value="Central">Название 2</option>
+                </select>
+                <div class="custom-select__styled"><span class="custom-select__value">Все</span>
+                  <svg width="18" height="9" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#down"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option" rel="hide" tabindex="0">Все</li>
+                  <li class="custom-select__option" rel="Siberian" tabindex="0">Название 1</li>
+                  <li class="custom-select__option" rel="Central" tabindex="0">Название 2</li>
+                </ul>
+              </div>
+              <div class="request__description">
+                <label for="description-field">Краткое описание проекта</label>
+                <textarea id="description-field" placeholder="Все"></textarea>
+              </div>
+              <div class="request__description">
+                <label for="goals-field">Цели и задачи</label>
+                <textarea id="goals-field"></textarea>
+              </div>
+              <div class="request__description">
+                <label for="realization-field">Реализация</label>
+                <textarea id="realization-field"></textarea>
+              </div>
+              <div class="request__description">
+                <label for="results-field">Достигнутые результаты</label>
+                <textarea id="results-field"></textarea>
+              </div>
+              <div class="request__field-container">
+                <h2>Загрузка материалов по&nbsp;проекту (ссылка на&nbsp;видео-отчет (youtube, vimeo); ссылка на&nbsp;архив с&nbsp;фотографиями</h2>
+                <div class="request__field-content">
+                  <div class="request__field">
+                    <div class="custom-input">
+                      <label class="custom-input__label visually-hidden" for="resource-field-1">Информационный ресурс</label>
+                      <input class="custom-input__field" type="text" name="resource-field-1" id="resource-field-1" placeholder="normasport.ru">
+                    </div>
+                    <button class="button" type="button" aria-label="Очистить поле">
+                      <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#clear"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="request__field">
+                    <div class="custom-input">
+                      <label class="custom-input__label visually-hidden" for="resource-field-2">Информационный ресурс</label>
+                      <input class="custom-input__field" type="text" name="resource-field-2" id="resource-field-2" placeholder="tyvigre.ru">
+                    </div>
+                    <button class="button" type="button" aria-label="Очистить поле">
+                      <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#clear"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <button class="button" type="button">Добавить еще
+                    <svg class="button__icon button__icon--right" width="24" height="24" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#add"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="request__field-container request__field-container--secondary">
+                <h2>Загрузите файлы по проекту / презентация проекта в pdf</h2>
+                <div class="request__field-content">
+                  <div class="request__field">
+                    <div class="custom-input">
+                      <label class="custom-input__label" for="my-file-field">Добавление файла</label>
+                      <input class="custom-input__field" type="file" name="my-file-field" id="my-file-field" placeholder="Выберите файл">
+                    </div>
+                    <button class="button" type="button" aria-label="Очистить поле">
+                      <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#clear"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <button class="button" type="button">Добавить еще
+                  <svg class="button__icon button__icon--right" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#add"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button class="button request__send" type="button">Подать заявку
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>

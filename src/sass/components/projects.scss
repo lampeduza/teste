@@ -1,0 +1,56 @@
+@use './global/library.scss' as lib;
+
+.projects {
+	h1 {
+		margin-bottom: 26px;
+		font-family: inherit;
+		font-size: 44px;
+		line-height: 54px;
+		font-weight: 700;
+	}
+
+	.custom-select {
+		min-width: 565px;
+		margin-bottom: 40px;
+		z-index: 5;
+
+		@include lib.viewport-1023 {
+			min-width: 100%;
+		}
+
+		label {
+			margin-bottom: 7px;
+			display: block;
+			font-family: inherit;
+			color: #BDBDBD;
+			font-size: 13px;
+			line-height: 16px;
+			font-weight: 400;
+		}
+	}
+
+	.custom-select__styled {
+		background-color: #ffffff;
+		border: 2px solid #E7E7E7;
+		border-radius: 3px;
+		color: #373C41;
+	}
+
+
+	.custom-select__value {
+		font-family: inherit;
+		color: #BDBDBD;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 400;
+	}
+
+	.custom-select__options {
+		top: 68px;
+	}
+
+	.custom-select__option {
+		background-color: white;
+		color: #373C41;
+	}
+}

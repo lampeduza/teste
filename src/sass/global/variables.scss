@@ -1,0 +1,38 @@
+/* retina */
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+/* @media */
+$viewport-320: 320px;
+$viewport-375: 375px;
+$viewport-768: 768px;
+$viewport-1024: 1024px;
+$viewport-1100: 1100px;
+$viewport-1280: 1280px;
+$viewport-1440: 1440px;
+$viewport-1920: 1920px;
+
+/* fonts */
+$primary-font: "Montserrat", "Arial", sans-serif;
+$secondary-font: "Old Standard TT", serif;
+
+/* default colours */
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+$color-transparent: transparent;
+
+/* colours */
+$color-nero: #1f1f1f;
+$color-cinnabar: #e74c3c;
+$color-brown: #ab3326;
+$color-alice-blue: #f2f5f9;
+$color-black-pearl: #001a34;
+$color-cobalt: #003ead;
+$color-solitude: #e2e7ec;
+$color-pattens-blue: #d5e6f9;
+$color-bali-hai: #7c96b0;
+$color-dodger-blue: #2d8df1;
+$color-sunset-orange: #ff553e;
+
+/* animation */
+$transition-default: 0.3s ease;

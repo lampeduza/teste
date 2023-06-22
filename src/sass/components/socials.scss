@@ -1,0 +1,69 @@
+@use './global/library.scss' as lib;
+
+.socials {
+	@include lib.reset-list;
+
+	display: grid;
+	grid-template-columns: repeat(2, 44px);
+	gap: 10px;
+	justify-content: end;
+
+	@include lib.viewport-1023 {
+		display: flex;
+		flex-direction: wrap;
+		gap: 0;
+		justify-content: flex-start;
+	}
+
+	@include lib.viewport-1023 {
+		flex-wrap: wrap;
+	}
+}
+
+.socials__item {
+	@include lib.viewport-1023 {
+		margin-right: 10px;
+		margin-top: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 44px;
+		height: 44px;
+
+		color: #373C41;
+
+		background-color: #BEF52C;
+		border-radius: 50%;
+
+		@include lib.hover {
+			background-color: #373C41;
+
+			svg {
+				color: #FBFEFE;
+			}
+		}
+
+		@include lib.focus {
+			background-color: darken(#373C41, 10%);
+
+			svg {
+				color: #FBFEFE;
+			}
+		}
+
+		@include lib.active {
+			background-color: darken(#373C41, 10%);
+
+			svg {
+				color: #FBFEFE;
+			}
+		}
+	}
+}

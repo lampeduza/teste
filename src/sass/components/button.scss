@@ -1,0 +1,61 @@
+@use './global/library.scss' as lib;
+
+.button {
+	color: inherit;
+	font-family: lib.$secondary-font;
+	font-size: 18px;
+	line-height: inherit;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid black;
+	outline: none;
+	background-color: lib.$color-transparent;
+	
+	&--disabled,
+	&:disabled {
+		cursor: default;
+    pointer-events: none;
+    opacity: 0.3;
+	}
+
+	@include lib.hover {
+		color: crimson;
+		border-color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+
+	@include lib.focus {
+		color: crimson;
+		border-color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+
+	@include lib.active {
+		color: crimson;
+		border-color: crimson;
+
+		svg {
+			color: currentColor;
+		}
+	}
+}
+
+.button__icon {
+	&--left {
+		margin-right: 8px;
+	}
+
+	&--right {
+		margin-left: 8px;
+	}
+}

@@ -1,0 +1,91 @@
+@use './global/library.scss' as lib;
+
+@keyframes fade-in {
+	from {
+		opacity: 0;	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.custom-select {
+	width: max-content;
+	min-height: 40px;
+	user-select: none;
+
+	position: relative;
+
+	select {
+		@include lib.visually-hidden;
+	}
+
+	&.is-active {
+		.custom-select__options {
+			opacity: 1;
+			display: block;
+		}
+	}
+}
+
+.custom-select__styled {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: lib.$color-default-white;
+	background-color: lib.$color-cinnabar;
+	cursor: pointer;
+	transition: background-color lib.$transition-default;
+	outline: none;
+
+	padding: 10px 15px;
+
+	svg {
+		margin-left: 12px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: lib.$color-brown;
+	}
+
+	&.is-active {
+		svg {
+			transform: rotate(-90deg);
+			transition: transform lib.$transition-default;
+		}
+	}
+}
+
+.custom-select__options {
+	@include lib.reset-list;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	opacity: 0;
+	display: none;
+	animation: fade-in 0.6s;
+	transition: all lib.$transition-default;
+}
+
+.custom-select__option {
+	padding: 10px 15px;
+
+	color: lib.$color-default-white;
+	background-color: lib.$color-cinnabar;
+	transition: background-color lib.$transition-default;
+	cursor: pointer;
+	outline: none;
+
+	&:hover,
+	&:focus {
+		background-color: lib.$color-brown;
+	}
+}
+
+.custom-select__option[rel="hide"] {
+	display: none;
+}

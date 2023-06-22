@@ -1,0 +1,80 @@
+mixin best-projects
+	-
+		const array = [
+			{
+				href: '#slide1',
+				title: 'Конкурс для детей с ограниченными возможностями',
+				src: 'card-3',
+				date: '23 мая 2023',
+			},
+			{
+				href: '#slide2',
+				title: 'Конкурс на лучшую спортивную форму',
+				src: 'card-4',
+				date: '23 мая 2023',
+			},
+			{
+				href: '#slide3',
+				title: 'Марафон 20 км',
+				src: 'card-5',
+				date: '23 мая 2023',
+			},
+			{
+				href: '#slide1',
+				title: 'Конкурс для детей с ограниченными возможностями',
+				src: 'card-3',
+				date: '23 мая 2023',
+			},
+			{
+				href: '#slide2',
+				title: 'Конкурс на лучшую спортивную форму',
+				src: 'card-4',
+				date: '23 мая 2023',
+			},
+			{
+				href: '#slide3',
+				title: 'Марафон 20 км',
+				src: 'card-5',
+				date: '23 мая 2023',
+			},
+		];
+
+	section.best-projects
+		.best-projects__wrapper.container
+			h2 Лучшие проекты конкурса
+			.best-projects__slider.slider
+				ul.slider__list
+					each item in array
+						li.slider__item
+							a.slider__link(href= item.href title= item.title)
+								+picture('desktop', item.src, 'jpg', '363', '250', item.title)
+								.slider__content
+									p= item.title
+									time= item.date
+				.slider__controls
+					+button(
+					  {
+					    ariaLabel: 'Предыдущий слайд',
+					    mods: ['previous'],
+					    icon: {
+					      name: 'left',
+					      width: '11',
+					      height: '20',
+					    },
+					  }
+					)
+					+button(
+					  {
+					    ariaLabel: 'Следующий слайд',
+					    mods: ['next'],
+					    icon: {
+					      name: 'right',
+					      width: '11',
+					      height: '20',
+					    },
+					  }
+					)
+
+
+
+

@@ -1,0 +1,33 @@
+mixin custom-select(months = {})
+  - const heading = months.heading || 'Custom select';
+  - const data = months.data || false;
+  - const label = months.label || '';
+
+  .custom-select
+    label&attributes(attributes)= months.label
+    select#month
+      each month in data
+        option(value= month.value)= month.text
+    .custom-select__styled
+      span.custom-select__value= heading
+      +icon('down', '18', '9')
+    ul.custom-select__options
+      each month in data
+        li.custom-select__option(rel= month.value tabindex="0")= month.text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

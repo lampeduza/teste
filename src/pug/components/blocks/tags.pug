@@ -1,0 +1,8 @@
+mixin tags(options = {})
+	- const tags = options.tags || false;
+
+	.tags
+		ul.tags__list
+			each tag in tags
+				li.tags__item
+					+link(tag).tags__link

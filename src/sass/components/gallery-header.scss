@@ -1,0 +1,114 @@
+@use './global/library.scss' as lib;
+
+.gallery-header {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	margin-bottom: 30px;
+
+	picture {
+		align-self: start;
+	}
+
+	@include lib.viewport-1023 {
+		grid-template-columns: auto;
+	}
+}
+
+.gallery-header__content {
+	display: flex;
+	flex-direction: column;
+
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #373C41;
+
+	@include lib.viewport-1023 {
+		position: relative;
+	}
+
+	p {
+		font-family: inherit;
+		padding: 33px 0 24px 29px;
+	}
+
+	a {
+		font-family: inherit;
+		margin-left: auto;
+		margin-top: auto;
+
+		@include lib.hover {
+			color: darken(#373C41, 20%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.focus {
+			color: darken(#373C41, 30%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.active {
+			color: darken(#373C41, 30%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+	}
+}
+
+.gallery-header__title {
+	background-color: #A7E600;
+	padding: 16px 14px 20px 29px;
+	margin-top: 20px;
+	color: #373C41;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include lib.viewport-1023 {
+		margin-top: 10px;
+
+		h1 {
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		time {
+			position: absolute;
+			right: 0;
+			top: -64px;
+			background-color: #A7E600;
+			display: block;
+			padding: 11px 12px;
+		}
+	}
+
+	h2 {
+		font-size: 28px;
+		line-height: 34px;
+		margin-right: 10px;
+	}
+
+	time {
+		font-family: inherit;
+		font-weight: 700;
+		font-size: 22px;
+		line-height: 26px;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+
+	small {
+		font-size: 13px;
+		line-height: 16px;
+	}
+}

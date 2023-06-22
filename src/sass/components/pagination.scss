@@ -1,0 +1,117 @@
+@use './global/library.scss' as lib;
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 960px;
+}
+
+.pagination__list {
+  @include lib.reset-list;
+
+  display: flex;
+  order: 2;
+}
+
+.pagination__item {
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--empty {
+    a {
+      pointer-events: none;
+    }
+  }
+}
+
+.pagination__link,
+.pagination__button {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+
+  border: 1px solid lib.$color-transparent;
+  border-radius: 4px;
+  transition: 
+    border lib.$transition-default,
+    background-color lib.$transition-default,
+    color lib.$transition-default;
+  outline: none;
+  user-select: none;
+}
+
+.pagination__link {
+  color: lib.$color-default-black;
+  width: 40px;
+
+  @include lib.hover {
+    color: lib.$color-default-black;
+    font-weight: 700;
+    border-color: lib.$color-default-black;
+  }
+
+  @include lib.focus {
+    color: lib.$color-default-black;
+    font-weight: 700;
+    border-color: lib.$color-default-black;
+  }
+
+  @include lib.active {
+    color: lib.$color-default-black;
+    font-weight: 700;
+    border-color: lib.$color-default-black;
+  }
+}
+
+.pagination__button {
+  padding: 0 10px;
+
+  &--previous {
+    order: 1;
+    margin-right: 8px;
+    border-color: lib.$color-default-black;
+
+    @include lib.hover {
+      color: lighten(lib.$color-default-black, 60%);
+      border-color: lighten(lib.$color-default-black, 60%);
+    }
+
+    @include lib.focus {
+      color: lighten(lib.$color-default-black, 60%);
+      border-color: lighten(lib.$color-default-black, 60%);
+    }
+
+    @include lib.active {
+      color: lighten(lib.$color-default-black, 60%);
+      border-color: lighten(lib.$color-default-black, 60%);
+    }
+  }
+
+  &--next {
+    order: 3;
+    color: lib.$color-default-white;
+    background-color: lib.$color-default-black;
+    margin-left: 8px;
+
+    @include lib.hover {
+      color: darken(lib.$color-default-white, 30%);
+      background-color: lighten(lib.$color-default-black, 10%);
+    }
+
+    @include lib.focus {
+      color: darken(lib.$color-default-white, 30%);
+      background-color: lighten(lib.$color-default-black, 10%);
+    }
+
+    @include lib.active {
+      color: darken(lib.$color-default-white, 30%);
+      background-color: lighten(lib.$color-default-black, 10%);
+    }
+  }
+}

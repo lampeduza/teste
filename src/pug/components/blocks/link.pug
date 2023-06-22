@@ -1,0 +1,21 @@
+mixin link(options = {})
+  - const tag = options.href ? 'a' : 'button';
+  - const text = options.text || '';
+  - const title = options.title ||  false;
+  - const href = options.href || false;
+  - const type = options.type || tag === 'button' ? options.type || 'button' : false;
+  - const ariaLabel = options.ariaLabel || false;
+  - const target = options.isExternal ? '_blank' : false;
+  - const rel = options.isExternal ? 'nofollow noopener noreferrer' : false;
+  - const icon = options.icon || false;
+  - const {name, width, height, isLeft, isRight} = icon || false;
+  - const mods = options.mods?.map((mod) => `link--${mod}`) || false;
+
+  #{tag}.link(class= mods, href= href, target= target, rel= rel, type= type, aria-label= ariaLabel)&attributes(attributes)
+    if (icon && isLeft)
+      +icon(name, width, height).link__icon.link__icon--left
+    span.link__text= text
+    if (icon && isRight)
+      +icon(name, width, height).link__icon.link__icon--right
+    if (icon && !text && !isLeft && !isRight)
+      +icon(name, width, height)

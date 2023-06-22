@@ -1,0 +1,26 @@
+@use './global/library.scss' as lib;
+
+.breadcrumbs__list {
+	@include lib.reset-list;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.breadcrumbs__item {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.breadcrumbs__link {
+	margin-right: 10px;
+
+	&--current {
+		color: rgba(0, 0, 0, 0.3);
+		pointer-events: none;
+	}
+}

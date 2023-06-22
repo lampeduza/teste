@@ -1,0 +1,33 @@
+include projects-data
+include gallery-list-data
+include marathon-data
+
+
+mixin gallery-list
+  ul.gallery-list.gallery__list&attributes(attributes)
+    if pageTitle === 'Конкурсы'
+      each item in data
+        li.gallery__item(class= item.isBig === true ? 'gallery__item--big' : 'gallery__item--small')
+          a.gallery__link(href= item.href, target="_blank", title= item.title)
+            +picture('desktop', item.src, 'jpg', item.width, item.height, item.alt)
+            .gallery__content
+              h3= item.text
+              time(datetime= item.datetime)= item.time
+    if pageTitle === 'Лучшие проекты'
+      each item in array
+        - const isBig = item.isBig === true ? 'gallery__item--big' : 'gallery__item--small'
+        - const isVideo = item.video === true ? 'gallery__item--video' : ''
+          li.gallery__item(class= `${isBig} ${isVideo}`)
+            a.gallery__link(href= item.href, target="_blank", title= item.title)
+              +picture('desktop', item.src, 'jpg', item.width, item.height, item.alt)
+              .gallery__content
+                h3= item.text
+                time(datetime= item.datetime)= item.time
+    if pageTitle === 'Марафон 20 км'
+      each item in marathonArray
+        - const isVideo = item.video === true ? 'gallery__item--video gallery__item--unique' : ''
+          li.gallery__item.gallery__item--special(class= isVideo)
+            a.gallery__link(href= item.href, target="_blank", title= item.title)
+              +picture('desktop', item.src, 'jpg', item.width, item.height, item.alt)
+              .gallery__content
+                h3= item.text

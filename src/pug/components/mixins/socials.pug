@@ -1,0 +1,76 @@
+mixin socials
+  -
+    const socials = [
+      {
+        href: '#vk.html',
+        ariaLabel: 'vk',
+        isExternal: true,
+        icon: {
+          name: 'vk',
+          width: '18',
+          height: '12',
+        },
+      },
+      {
+        href: '#twitter.html',
+        ariaLabel: 'twitter',
+        isExternal: true,
+        icon: {
+          name: 'twitter',
+          width: '18',
+          height: '16',
+        },
+      },
+      {
+        href: '#instagram.html',
+        ariaLabel: 'instagram',
+        isExternal: true,
+        icon: {
+          name: 'instagram',
+          width: '19',
+          height: '19',
+        },
+      },
+      {
+        href: '#facebook.html',
+        ariaLabel: 'facebook',
+        isExternal: true,
+        icon: {
+          name: 'facebook',
+          width: '8',
+          height: '18',
+        },
+      },
+      {
+        href: '#ok.html',
+        ariaLabel: 'ok',
+        isExternal: true,
+        icon: {
+          name: 'odnoklasniki',
+          width: '18',
+          height: '18',
+        },
+      },
+      {
+        href: '#telegram.html',
+        ariaLabel: 'telegram',
+        isExternal: true,
+        icon: {
+          name: 'telegram',
+          width: '19',
+          height: '15',
+        },
+      },
+    ];
+
+  ul.socials&attributes(attributes)
+    each social in socials
+      li.socials__item
+        +link(social)(aria-label=`Мы в ${social.ariaLabel}` target="_blank")
+
+
+
+
+
+
+

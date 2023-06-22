@@ -1,0 +1,19 @@
+mixin pagination(pagination = {})
+  - const buttons = pagination.buttons || false;
+  - const links = pagination.links || false;
+
+  .pagination
+    each button in buttons
+      +link(button).pagination__button(class= button.isPrevious ? 'pagination__button--previous' : 'pagination__button--next')
+    ul.pagination__list
+      each link in links
+        li.pagination__item(class= link.isEmpty ? 'pagination__item--empty' : '')
+          +link(link).pagination__link(tabindex= link.isEmpty ? '-1' : '')
+
+
+
+
+
+
+
+

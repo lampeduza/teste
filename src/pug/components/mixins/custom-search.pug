@@ -1,0 +1,15 @@
+mixin custom-search(options = {})
+	- const {type, name, id, placeholder} = options;
+
+	.custom-input&attributes(attributes)
+		input.custom-input__field(type= options.type name= options.name id= options.id placeholder= options.placeholder)
+		+button(
+		  {
+		    ariaLabel: 'Искать конкурс',
+		    icon: {
+		      name: 'search',
+		      width: '31',
+		      height: '29',
+		    },
+		  }
+		)

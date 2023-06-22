@@ -1,0 +1,92 @@
+@use './global/library.scss' as lib;
+
+.contests {
+	margin-bottom: 30px;
+
+	@include lib.viewport-1023 {
+		margin-bottom: 26px;
+		overflow: hidden;
+	}
+}
+
+.contests__list {
+	@include lib.reset-list;
+	display: flex;
+	flex-wrap: wrap;
+
+	@include lib.viewport-1023 {
+		flex-wrap: nowrap;
+		overflow: scroll;
+
+		&::-webkit-scrollbar {
+  		width: 0;
+		}
+	}
+}
+
+.contests__item {
+	margin-right: 25px;
+	margin-top: 25px;
+
+	@include lib.viewport-1023 {
+		flex-shrink: 0;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	button {
+		font-family: inherit;
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #373C41;
+		padding: 0;
+		border: none;
+
+		@include lib.hover {
+			color: darken(#373C41, 20%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.focus {
+			color: darken(#373C41, 30%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+
+		@include lib.active {
+			color: darken(#373C41, 30%);
+
+			svg {
+				color: currentColor;
+			}
+		}
+	}
+
+	&--current {
+		position: relative;
+
+		button {
+			&::before {
+				content: '';
+				width: 100%;
+				height: 11px;
+				background-color: #A7E600;
+				position: absolute;
+				top: auto;
+				left: 0;
+				right: 0;
+				bottom: 3px;
+
+				z-index: -1;
+			}
+		}
+	}
+}

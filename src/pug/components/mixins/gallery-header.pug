@@ -1,0 +1,25 @@
+mixin gallery-header
+	section.gallery__header.gallery-header
+		+picture('desktop', 'gallery-header-image', 'jpg', '560', '387')
+		.gallery-header__content
+			.gallery-header__title
+				h2.gallery-header__text Конкурс Муниципалитетов
+				time(datetime="18-05-2023")
+					.
+						23.05
+					small 2023
+			p
+				.
+					&laquo;Zaraysk Bison Race&raquo;&nbsp;&mdash; это экстремальный исторический забег с&nbsp;препятствиями по&nbsp;пересеченной местности. Участникам команд необходимо преодолеть подготовленную дистанцию с&nbsp;различного рода испытаниями. Стартово - финишная зона находится у&nbsp;древнейших стен Зарайского Кремля, который расположен на&nbsp;территории так называемой &laquo;Зарайской стоянки&raquo;.
+			+link(
+			  {
+			    text: 'Подробнее',
+			    href: '#second.html',
+			    icon: {
+			      name: 'more',
+			      width: '20',
+			      height: '9',
+			      isRight: true,
+			    },
+			  }
+			)

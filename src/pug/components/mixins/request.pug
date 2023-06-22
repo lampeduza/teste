@@ -1,0 +1,287 @@
+mixin request
+  section.request
+    h1 Заявка на участие
+    form(action="#" method="#")
+      fieldset
+        legend.visually-hidden Заполните заявку на участие
+        +custom-select(
+          {
+            heading: 'Все',
+            label: 'Регионы',
+            data: [
+              {value: 'hide', text: 'Все'},
+              {value: 'Siberian', text: 'Сибирский регион'},
+              {value: 'Central', text: 'Центральный федеральный округ'},
+            ],
+          }
+        )
+        +custom-select(
+          {
+            heading: 'Все',
+            label: 'Муниципальный район',
+            data: [
+              {value: 'hide', text: 'Все'},
+              {value: '1', text: 'Район'},
+              {value: '2', text: 'Район 2'},
+            ],
+          }
+        )
+        +custom-input({
+          fields: [
+            {
+              label: 'Численность жителей в муниципальном образовании',
+              sign: 'population-field',
+              type: 'number',
+              name: 'population-field',
+              id: 'population-field',
+              placeholder: '150.000',
+            }
+          ],
+        })
+        +custom-input({
+          fields: [
+            {
+              label: 'Количество населенных пунктов в муниципальном образовании',
+              sign: 'settlements-field',
+              type: 'number',
+              name: 'settlements-field',
+              id: 'settlements-field',
+              placeholder: '3',
+            }
+          ],
+        })
+        +custom-input({
+          fields: [
+            {
+              label: 'Доля занимающихся физической культурой и спортом в муниципалитете ',
+              sign: 'percent-field',
+              type: 'text',
+              name: 'percent-field',
+              id: 'percent-field',
+              placeholder: '45%',
+            }
+          ],
+        })
+        .request__field-container
+          h2 Официальные информационные ресурсы муниципального образования, на&nbsp;которых размещаются материалы о&nbsp;физической культуре и&nbsp;спорте
+          .request__field
+            +custom-input({
+              fields: [
+                {
+                  label: 'Информационный ресурс',
+                  hidden: true,
+                  sign: 'resource-field-1',
+                  type: 'text',
+                  name: 'resource-field-1',
+                  id: 'resource-field-1',
+                  placeholder: 'normasport.ru',
+                }
+              ],
+            })
+            +button(
+              {
+                ariaLabel: 'Очистить поле',
+                icon: {
+                  name: 'clear',
+                  width: '24',
+                  height: '24',
+                },
+              }
+            )
+          .request__field
+            +custom-input({
+              fields: [
+                {
+                  label: 'Информационный ресурс',
+                  hidden: true,
+                  sign: 'resource-field-2',
+                  type: 'text',
+                  name: 'resource-field-2',
+                  id: 'resource-field-2',
+                  placeholder: 'tyvigre.ru',
+                }
+              ],
+            })
+            +button(
+              {
+                ariaLabel: 'Очистить поле',
+                icon: {
+                  name: 'clear',
+                  width: '24',
+                  height: '24',
+                },
+              }
+            )
+          +button(
+            {
+              text: 'Добавить еще',
+              icon: {
+                name: 'add',
+                width: '24',
+                height: '24',
+                isRight: true,
+              }
+            }
+          )
+        .request__field-container.request__field-container--category
+          h2 Выбор категории по количеству жителей
+          ul
+            li
+              input.visually-hidden(type="checkbox" name="first" id="first")
+              label(for="first") 50 тыс.
+            li
+              input.visually-hidden(type="checkbox" name="second" id="second" checked)
+              label(for="second") от 50 до 100 тыс
+            li
+              input.visually-hidden(type="checkbox" id="third" name="third")
+              label(for="third") свыше 100 тыс
+        +custom-select(
+          {
+            heading: 'Организация работы с трудовым населением по вовлечению в ФКиС',
+            label: 'Выбор номинации',
+            data: [
+              {value: 'hide', text: 'Организация работы с трудовым населением по вовлечению в ФКиС'},
+              {value: '1', text: 'text'},
+              {value: '2', text: 'text 2'},
+            ],
+          }
+        )
+      .request__about
+        h2 О проекте
+        +custom-select(
+          {
+            heading: 'Все',
+            label: 'Название проекта',
+            data: [
+              {value: 'hide', text: 'Все'},
+              {value: 'Siberian', text: 'Название 1'},
+              {value: 'Central', text: 'Название 2'},
+            ],
+          }
+        )
+        .request__description
+          label(for="description-field") Краткое описание проекта
+          textarea(id="description-field" placeholder="Все")
+        .request__description
+          label(for="goals-field") Цели и задачи
+          textarea(id="goals-field")
+        .request__description
+          label(for="realization-field") Реализация
+          textarea(id="realization-field")
+        .request__description
+          label(for="results-field") Достигнутые результаты
+          textarea(id="results-field")
+        .request__field-container
+          h2 Загрузка материалов по&nbsp;проекту (ссылка на&nbsp;видео-отчет (youtube, vimeo); ссылка на&nbsp;архив с&nbsp;фотографиями
+          .request__field-content
+            .request__field
+              +custom-input({
+                fields: [
+                  {
+                    label: 'Информационный ресурс',
+                    hidden: true,
+                    sign: 'resource-field-1',
+                    type: 'text',
+                    name: 'resource-field-1',
+                    id: 'resource-field-1',
+                    placeholder: 'normasport.ru',
+                  }
+                ],
+              })
+              +button(
+                {
+                  ariaLabel: 'Очистить поле',
+                  icon: {
+                    name: 'clear',
+                    width: '24',
+                    height: '24',
+                  },
+                }
+              )
+            .request__field
+              +custom-input({
+                fields: [
+                  {
+                    label: 'Информационный ресурс',
+                    hidden: true,
+                    sign: 'resource-field-2',
+                    type: 'text',
+                    name: 'resource-field-2',
+                    id: 'resource-field-2',
+                    placeholder: 'tyvigre.ru',
+                  }
+                ],
+              })
+              +button(
+                {
+                  ariaLabel: 'Очистить поле',
+                  icon: {
+                    name: 'clear',
+                    width: '24',
+                    height: '24',
+                  },
+                }
+              )
+            +button(
+              {
+                text: 'Добавить еще',
+                icon: {
+                  name: 'add',
+                  width: '24',
+                  height: '24',
+                  isRight: true,
+                }
+              }
+            )
+        .request__field-container.request__field-container--secondary
+          h2 Загрузите файлы по проекту / презентация проекта в pdf
+          .request__field-content
+            .request__field
+              +custom-input({
+                fields: [
+                  {
+                    label: 'Добавление файла',
+                    sign: 'my-file-field',
+                    type: 'file',
+                    name: 'my-file-field',
+                    id: 'my-file-field',
+                    placeholder: 'Выберите файл',
+                    multiple: 'multiple',
+                  }
+                ],
+              })
+              +button(
+                {
+                  ariaLabel: 'Очистить поле',
+                  icon: {
+                    name: 'clear',
+                    width: '24',
+                    height: '24',
+                  },
+                }
+              )
+          +button(
+            {
+              text: 'Добавить еще',
+              icon: {
+                name: 'add',
+                width: '24',
+                height: '24',
+                isRight: true,
+              }
+            }
+          )
+      +button(
+        {
+          text: 'Подать заявку',
+        }
+      )(class="request__send")
+
+
+
+
+
+
+
+
+
